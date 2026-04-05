@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lefebvre & Associés — Cabinet d'Expertise Comptable à Neuilly-sur-Seine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0c1a35;
+      --navy-mid:#152244;
+      --navy-lt: #1e3060;
+      --gold:    #b8943f;
+      --gold-lt: #d4af6a;
+      --gold-pale:#f0e0b0;
+      --cream:   #faf7f2;
+      --white:   #ffffff;
+      --text:    #2c2c2c;
+      --text-lt: #5a5a5a;
+      --border:  rgba(184,148,63,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(12, 26, 53, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      text-decoration: none;
+    }
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .logo-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--gold-lt);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    nav { display: flex; align-items: center; gap: 2.5rem; }
+
+    nav a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold-lt); }
+
+    .btn-contact {
+      padding: 0.55rem 1.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-lt) !important;
+      transition: background 0.25s, color 0.25s !important;
+    }
+    .btn-contact:hover {
+      background: var(--gold);
+      color: var(--navy) !important;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(155deg, var(--navy) 0%, var(--navy-mid) 55%, #0e2040 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 40%, rgba(184,148,63,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(184,148,63,0.05) 0%, transparent 60%);
+    }
+
+    /* Decorative grid lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(184,148,63,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,148,63,0.04) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 8rem 2.5rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .hero-label::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.18;
+      margin-bottom: 1.6rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2.8rem;
+      max-width: 520px;
+      font-style: italic;
+    }
+
+    .hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.9rem 2.4rem;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--gold-lt); }
+    .btn-secondary::after { content: '→'; }
+
+    /* Hero right: chiffres clés */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(184,148,63,0.15);
+      border: 1px solid rgba(184,148,63,0.15);
+    }
+    .stat-item {
+      background: rgba(12,26,53,0.85);
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      line-height: 1;
+      display: block;
+    }
+    .stat-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    /* ─── SEPARATEUR ORNEMENTAL ─── */
+    .ornament {
+      text-align: center;
+      padding: 3.5rem 0;
+      color: var(--gold);
+      font-size: 1.2rem;
+      letter-spacing: 0.8em;
+      opacity: 0.5;
+    }
+
+    /* ─── SECTIONS COMMUNES ─── */
+    section { padding: 6rem 2.5rem; }
+    .container { max-width: 1280px; margin: 0 auto; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.22;
+      margin-bottom: 1.2rem;
+    }
+    h2 em { font-style: italic; color: var(--gold); }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--text-lt);
+      font-style: italic;
+      max-width: 640px;
+    }
+
+    /* ─── EXPERTISE / SERVICES ─── */
+    #expertise { background: var(--white); }
+
+    .expertise-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .expertise-header .lead { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #e8e0d4;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2.8rem 2.2rem;
+      position: relative;
+      transition: background 0.3s;
+    }
+    .service-card:hover { background: var(--cream); }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 2.2rem;
+      width: 36px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .service-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .service-desc {
+      font-size: 0.95rem;
+      color: var(--text-lt);
+      line-height: 1.65;
+    }
+
+    .service-list {
+      margin-top: 1rem;
+      padding-left: 0;
+      list-style: none;
+    }
+    .service-list li {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      padding: 0.2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .service-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.7rem;
+      top: 0.1rem;
+    }
+
+    /* ─── CABINET / ABOUT ─── */
+    #cabinet {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    #cabinet h2 { color: var(--white); }
+    #cabinet .section-label { color: var(--gold-lt); }
+    #cabinet .section-label::before { background: var(--gold-lt); }
+
+    .cabinet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .cabinet-text p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.4rem;
+      font-size: 1rem;
+    }
+
+    .cabinet-values {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .value-item {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid rgba(184,148,63,0.15);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .value-item:first-child { border-top: 1px solid rgba(184,148,63,0.15); }
+
+    .value-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      padding-top: 0.3rem;
+    }
+    .value-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .value-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* ─── EQUIPE ─── */
+    #equipe { background: var(--cream); }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.2rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy-lt), var(--navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold-lt);
+      border: 2px solid var(--border);
+    }
+
+    .team-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .team-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .team-desc {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      margin-top: 0.8rem;
+      font-style: italic;
+    }
+
+    /* ─── ACTUALITES ─── */
+    #actualites { background: var(--white); }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .news-card {
+      border-top: 2px solid var(--gold);
+      padding-top: 1.5rem;
+    }
+
+    .news-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .news-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+      line-height: 1.4;
+    }
+
+    .news-excerpt {
+      font-size: 0.9rem;
+      color: var(--text-lt);
+      line-height: 1.6;
+    }
+
+    .news-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .news-link:hover { gap: 0.7rem; }
+    .news-link::after { content: '→'; }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--white);
+    }
+
+    #contact h2 { color: var(--white); }
+    #contact .section-label { color: var(--gold-lt); }
+    #contact .section-label::before { background: var(--gold-lt); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      margin-top: 3.5rem;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+
+    .contact-block h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .contact-block p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+    .contact-block a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-block a:hover { color: var(--gold-lt); }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    input, select, textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(184,148,63,0.2);
+      color: var(--white);
+      padding: 0.75rem 1rem;
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.25); }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+
+    select option { background: var(--navy); }
+    textarea { resize: vertical; min-height: 110px; }
+
+    .btn-submit {
+      align-self: flex-start;
+      padding: 0.9rem 2.6rem;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      cursor: pointer;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-submit:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080f1e;
+      padding: 3rem 2.5rem;
+      border-top: 1px solid rgba(184,148,63,0.12);
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo .logo-name { font-size: 1.1rem; }
+
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 4rem; }
+      .hero-stats { grid-template-columns: repeat(4, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .cabinet-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .news-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-name">Lefebvre &amp; Associés</span>
+        <span class="logo-tag">Expert-Comptable · Neuilly-sur-Seine</span>
+      </a>
+      <nav>
+        <a href="#expertise">Expertise</a>
+        <a href="#cabinet">Le Cabinet</a>
+        <a href="#equipe">L'Équipe</a>
+        <a href="#actualites">Actualités</a>
+        <a href="#contact" class="btn-contact">Nous contacter</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="accueil">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-label">Cabinet d'expertise comptable</span>
+        <h1>L'excellence au service<br />de votre <em>développement</em></h1>
+        <p class="hero-desc">
+          Depuis 1987, nous accompagnons dirigeants et entrepreneurs de Neuilly-sur-Seine
+          et de la région parisienne avec rigueur, discrétion et engagement.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+          <a href="#expertise" class="btn-secondary">Découvrir nos expertises</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">37</span>
+          <span class="stat-label">Années d'expérience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">420+</span>
+          <span class="stat-label">Clients accompagnés</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">18</span>
+          <span class="stat-label">Collaborateurs</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Associés experts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERTISE ─── -->
+  <section id="expertise">
+    <div class="container">
+      <div class="expertise-header">
+        <span class="section-label">Nos domaines d'intervention</span>
+        <h2>Une expertise <em>pluridisciplinaire</em><br />à votre service</h2>
+        <p class="lead">
+          Notre cabinet vous offre un accompagnement complet, de la gestion quotidienne
+          à vos opérations les plus stratégiques.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <span class="service-icon">⬡</span>
+          <h3>Comptabilité & Gestion</h3>
+          <p class="service-desc">Tenue et révision comptable, établissement des comptes annuels, tableaux de bord et reporting de gestion.</p>
+          <ul class="service-list">
+            <li>Tenue comptable externalisée</li>
+            <li>Révision et contrôle</li>
+            <li>Comptes annuels IFRS / FR GAAP</li>
+            <li>Reporting mensuel</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">⬡</span>
+          <h3>Conseil Fiscal</h3>
+          <p class="service-desc">Optimisation fiscale, structuration de vos opérations et assistance lors des contrôles de l'administration.</p>
+          <ul class="service-list">
+            <li>Optimisation IS / IR</li>
+            <li>Fiscalité internationale</li>
+            <li>Défense lors de vérifications</li>
+            <li>Déclarations fiscales</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">⬡</span>
+          <h3>Audit & Commissariat</h3>
+          <p class="service-desc">Mission légale de commissariat aux comptes et audits contractuels selon les normes professionnelles en vigueur.</p>
+          <ul class="service-list">
+            <li>CAC — Audit légal</li>
+            <li>Audit d'acquisition</li>
+            <li>Audit de performance</li>
+            <li>Due diligence financière</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">⬡</span>
+          <h3>Paie & Ressources Humaines</h3>
+          <p class="service-desc">Gestion complète de votre paie et accompagnement RH : de l'embauche à la gestion des relations sociales.</p>
+          <ul class="service-list">
+            <li>Établissement des bulletins</li>
+            <li>Déclarations sociales (DSN)</li>
+            <li>Conseil en droit social</li>
+            <li>Optimisation rémunérations</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">⬡</span>
+          <h3>Transmission d'Entreprise</h3>
+          <p class="service-desc">Cession, acquisition ou restructuration : nous structurons et sécurisons chaque étape de votre opération.</p>
+          <ul class="service-list">
+            <li>Évaluation d'entreprise</li>
+            <li>Accompagnement cession/acquisition</li>
+            <li>Pacte Dutreil</li>
+            <li>LBO & ingénierie financière</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">⬡</span>
+          <h3>Conseil en Gestion</h3>
+          <p class="service-desc">Pilotage stratégique, business plan, prévisionnel et recherche de financements pour accélérer votre croissance.</p>
+          <ul class="service-list">
+            <li>Business plan & prévisionnel</li>
+            <li>Recherche de financement</li>
+            <li>Restructuration financière</li>
+            <li>Accompagnement à la création</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CABINET ─── -->
+  <section id="cabinet">
+    <div class="container">
+      <div class="cabinet-grid">
+        <div class="cabinet-text">
+          <span class="section-label">Notre identité</span>
+          <h2>Un cabinet fondé sur<br /><em>la confiance</em> et la durée</h2>
+          <p>
+            Fondé en 1987 par Maître Henri Lefebvre, le cabinet Lefebvre &amp; Associés s'est
+            imposé comme une référence de l'expertise comptable dans les Hauts-de-Seine.
+            Notre approche repose sur une relation de conseil étroite et personnalisée,
+            loin des structures industrielles.
+          </p>
+          <p>
+            Membres de l'Ordre des Experts-Comptables et de la Compagnie Nationale des
+            Commissaires aux Comptes, nos associés s'engagent au respect des normes
+            déontologiques les plus strictes.
+          </p>
+          <p>
+            Nous intervenons auprès de PME familiales, de groupes cotés, de professions
+            libérales et de particuliers fortunés sur l'ensemble des problématiques
+            comptables, fiscales et patrimoniales.
+          </p>
+          <br />
+          <a href="#contact" class="btn-primary" style="color:var(--navy)">Nous rencontrer</a>
+        </div>
+
+        <div class="cabinet-values">
+          <div class="value-item">
+            <span class="value-num">01</span>
+            <div>
+              <div class="value-title">Confidentialité absolue</div>
+              <div class="value-desc">La discrétion est au cœur de notre relation client. Vos informations ne sortent jamais de notre cabinet.</div>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-num">02</span>
+            <div>
+              <div class="value-title">Proactivité</div>
+              <div class="value-desc">Nous anticipons vos besoins et les évolutions réglementaires pour vous alerter avant que les situations ne deviennent critiques.</div>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-num">03</span>
+            <div>
+              <div class="value-title">Accessibilité</div>
+              <div class="value-desc">Un interlocuteur dédié, joignable, qui connaît votre dossier. Pas de centre d'appels, pas d'anonymat.</div>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-num">04</span>
+            <div>
+              <div class="value-title">Excellence technique</div>
+              <div class="value-desc">Formation continue, veille réglementaire permanente et investissement dans les meilleurs outils du marché.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EQUIPE ─── -->
+  <section id="equipe">
+    <div class="container">
+      <span class="section-label">Les associés</span>
+      <h2>Des experts à vos côtés</h2>
+      <p class="lead">Trois associés, des compétences complémentaires, un engagement commun.</p>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">HL</div>
+          <div class="team-name">Henri Lefebvre</div>
+          <div class="team-role">Associé fondateur</div>
+          <p class="team-desc">Expert-comptable & commissaire aux comptes. 37 ans d'expérience en audit légal et conseil aux groupes.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">CM</div>
+          <div class="team-name">Claire Marchand</div>
+          <div class="team-role">Associée — Fiscalité</div>
+          <p class="team-desc">Spécialisée en fiscalité internationale et optimisation patrimoniale. Ancienne avocate fiscaliste.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">TR</div>
+          <div class="team-name">Thomas Renaud</div>
+          <div class="team-role">Associé — Transactions</div>
+          <p class="team-desc">Expert en transmission d'entreprise et due diligence. Intervient sur les opérations M&amp;A et LBO.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">SB</div>
+          <div class="team-name">Sophie Bernard</div>
+          <div class="team-role">Directrice Paie & RH</div>
+          <p class="team-desc">Gestion de la paie et conseil en droit social pour une clientèle de PME et grandes entreprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ACTUALITES ─── -->
+  <section id="actualites">
+    <div class="container">
+      <span class="section-label">Veille &amp; Actualités</span>
+      <h2>Les dernières <em>évolutions</em> réglementaires</h2>
+
+      <div class="news-grid">
+        <div class="news-card">
+          <span class="news-date">Mars 2025</span>
+          <div class="news-title">Loi de finances 2025 : les principales mesures fiscales pour les entreprises</div>
+          <p class="news-excerpt">Analyse des dispositions impactant la fiscalité des sociétés, le régime des plus-values et les nouveaux dispositifs d'investissement.</p>
+          <a href="#" class="news-link">Lire l'analyse</a>
+        </div>
+        <div class="news-card">
+          <span class="news-date">Février 2025</span>
+          <div class="news-title">Pacte Dutreil : précisions de l'administration sur les holdings animatrices</div>
+          <p class="news-excerpt">L'administration fiscale a publié de nouvelles instructions concernant le traitement des holdings dans le cadre des transmissions.</p>
+          <a href="#" class="news-link">Lire l'analyse</a>
+        </div>
+        <div class="news-card">
+          <span class="news-date">Janvier 2025</span>
+          <div class="news-title">Réforme des retraites et impact sur vos obligations sociales</div>
+          <p class="news-excerpt">Point complet sur les nouvelles modalités de calcul des cotisations retraite et les obligations déclaratives des employeurs.</p>
+          <a href="#" class="news-link">Lire l'analyse</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact">
+    <div class="container">
+      <span class="section-label">Nous contacter</span>
+      <h2>Parlons de vos <em>enjeux</em></h2>
+      <p class="lead" style="color:rgba(255,255,255,0.6)">
+        Première consultation offerte. Nous répondons sous 24 heures ouvrées.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-block">
+            <h4>Adresse</h4>
+            <p>14, avenue Charles de Gaulle<br />92200 Neuilly-sur-Seine<br />Hauts-de-Seine</p>
+          </div>
+          <div class="contact-block">
+            <h4>Téléphone</h4>
+            <p><a href="tel:+33147224500">01 47 22 45 00</a></p>
+          </div>
+          <div class="contact-block">
+            <h4>Email</h4>
+            <p><a href="mailto:contact@lefebvre-associes.fr">contact@lefebvre-associes.fr</a></p>
+          </div>
+          <div class="contact-block">
+            <h4>Horaires</h4>
+            <p>Lundi – Vendredi : 9h00 – 18h30<br />Sur rendez-vous uniquement</p>
+          </div>
+          <div class="contact-block">
+            <h4>Accès</h4>
+            <p>Métro ligne 1 — Les Sablons<br />Parking Avenue Charles de Gaulle</p>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" placeholder="Jean" />
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" placeholder="Dupont" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Adresse email</label>
+            <input type="email" id="email" placeholder="jean.dupont@entreprise.fr" />
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" placeholder="+33 6 00 00 00 00" />
+          </div>
+          <div class="form-group">
+            <label for="sujet">Domaine de la demande</label>
+            <select id="sujet">
+              <option value="" disabled selected>Sélectionnez un domaine</option>
+              <option>Comptabilité & Gestion</option>
+              <option>Conseil Fiscal</option>
+              <option>Audit & Commissariat</option>
+              <option>Paie & Ressources Humaines</option>
+              <option>Transmission d'Entreprise</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Votre message</label>
+            <textarea id="message" placeholder="Décrivez brièvement votre situation et vos besoins…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Envoyer la demande</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#" class="logo footer-logo">
+        <span class="logo-name">Lefebvre &amp; Associés</span>
+        <span class="logo-tag">Expert-Comptable · Neuilly-sur-Seine · Depuis 1987</span>
+      </a>
+      <div class="footer-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Ordre des Experts-Comptables</a>
+        <a href="#">CNCC</a>
+      </div>
+      <span class="footer-copy">© 2025 Lefebvre &amp; Associés</span>
+    </div>
+  </footer>
+
+</body>
+</html>
